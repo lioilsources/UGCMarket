@@ -1,0 +1,20 @@
+data/
+.env
+deploy/cloudflared/credentials.json
+web/node_modules/
+web/.svelte-kit/
+web/build/
+.DS_Store
+# devconv:start
+.env.*
+!.env.example
+*.p8
+*.p12
+*.jks
+key.properties
+.claude/settings.local.json
+CLAUDE.local.md
+# devconv:end
+bin/
+*.test
+*.out

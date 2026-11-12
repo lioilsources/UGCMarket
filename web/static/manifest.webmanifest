@@ -1,0 +1,18 @@
+{
+	"name": "Ol1n Market",
+	"short_name": "Ol1n Market",
+	"description": "3D models ready for Roblox Studio and other engines",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#f8fafc",
+	"theme_color": "#1e1b4b",
+	"lang": "en",
+	"icons": [
+		{
+			"src": "/favicon.svg",
+			"sizes": "any",
+			"type": "image/svg+xml",
+			"purpose": "any"
+		}
+	]
+}

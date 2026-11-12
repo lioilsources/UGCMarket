@@ -1,0 +1,32 @@
+OL1N MARKET — PERSONAL LICENSE (DRAFT, pending legal review)
+
+Asset:        {{.Title}}
+Product URL:  {{.ProductURL}}
+License key:  {{.LicenseKey}}
+Licensee:     {{.Email}}
+Issued:       {{.Issued}}
+
+1. GRANT. The licensor grants you a non-exclusive, non-transferable, perpetual
+   license to use this 3D asset in personal, non-commercial projects, including
+   uploading it to your own Roblox account and using it in your own experiences
+   that do not generate revenue.
+
+2. ROBLOX UPLOADS. When you upload the asset to Roblox, you may grant Roblox
+   Corporation the license required by the Roblox Terms of Use. This license
+   permits that sublicense.
+
+3. RESTRICTIONS. You may not resell, redistribute, share or sublicense the
+   asset files themselves (modified or not), include them in asset packs,
+   templates or marketplaces, or use them to train machine-learning models.
+   Commercial use (monetized experiences, paid items, client work) requires a
+   Commercial License.
+
+4. ORIGIN. The asset was created with AI-assisted tools (image/3D generation)
+   followed by automated and manual cleanup.
+
+5. NO WARRANTY. The asset is provided "as is". See README.txt for the Roblox
+   moderation disclaimer and refund policy.
+
+Ol1n Market is not affiliated with, endorsed by, or sponsored by Roblox
+Corporation. "Roblox" is a trademark of Roblox Corporation, used only to
+describe compatibility.

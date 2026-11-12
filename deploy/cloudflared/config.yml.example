@@ -1,0 +1,16 @@
+# Cloudflare Tunnel market-nas. `make deploy-nas` uses this to produce config.yml on JODA
+# with the tunnel UUID and copies credentials.json; both are outside git.
+# The tunnel and DNS record are created manually, once, by Olin:
+#   cloudflared tunnel create market-nas
+#   cloudflared tunnel route dns market-nas market.ol1n.com
+# The web is PUBLIC, without Cloudflare Access.
+
+tunnel: <TUNNEL-ID>
+credentials-file: /etc/cloudflared/credentials.json
+
+ingress:
+  - hostname: market.ol1n.com
+    service: http://caddy:80
+    originRequest:
+      connectTimeout: 30s
+  - service: http_status:404

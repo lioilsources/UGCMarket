@@ -1,0 +1,27 @@
+# TLS terminates at Cloudflare, the tunnel talks to Caddy over plain HTTP.
+# Sign-in and permissions are handled by market-api; Caddy only limits the request size and adds headers.
+{
+	admin off
+	auto_https off
+}
+
+http://market.ol1n.com {
+	encode zstd gzip
+
+	request_body {
+		max_size 1MB
+	}
+
+	header {
+		-Server
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+	}
+
+	reverse_proxy market-web:3000
+
+	log {
+		output stdout
+		format json
+	}
+}
