@@ -1,13 +1,15 @@
 {{.Title}} — Ol1n Market
 {{.ProductURL}}
 
+QUICK START
+Step-by-step guide with screenshots: {{.GuideURL}}
+
 FILES
 {{range .Files}}  {{.}}
 {{end}}
-  *.fbx   Roblox-ready mesh (max 4,000 triangles, scaled in studs). Import in
-          Roblox Studio via the 3D Importer (Avatar > Import 3D / File > Import 3D).
-          The texture is a separate PNG next to it — apply it to the MeshPart
-          (TextureID) or SurfaceAppearance (ColorMap) if the importer does not.
+  *.fbx   Mesh for Roblox Studio (max 4,000 triangles, scaled in studs).
+          Import it with the 3D Importer in Roblox Studio. The texture is
+          a separate PNG next to it; the guide above shows how to apply it.
   *.png   Baked texture for the FBX (1024 px, unlit/emissive bake).
   *.glb   Source mesh with higher detail and original scale. Use it for other
           engines/renderers or as a starting point for your own edits; it is

@@ -35,8 +35,8 @@ func (s *Shop) IssueDownload(ctx context.Context, customerID, licenseID int64) (
 }
 
 type licenseData struct {
-	Title, ProductURL, LicenseKey, Email, Issued string
-	Files                                        []string
+	Title, ProductURL, GuideURL, LicenseKey, Email, Issued string
+	Files                                                  []string
 }
 
 // ServeDownload streams a ZIP: the asset's files + LICENSE.txt + README.txt.
@@ -74,6 +74,7 @@ func (s *Shop) ServeDownload(w http.ResponseWriter, r *http.Request, token strin
 		names[i] = fileName(product.Slug, f.Format)
 	}
 	data := licenseData{Title: product.Title, ProductURL: fmt.Sprintf("%s/p/%s", s.publicURL, product.Slug),
+		GuideURL:   s.publicURL + "/guide",
 		LicenseKey: lic.LicenseKey, Email: email, Issued: lic.IssuedAt.UTC().Format("2006-01-02"), Files: names}
 
 	w.Header().Set("Content-Type", "application/zip")

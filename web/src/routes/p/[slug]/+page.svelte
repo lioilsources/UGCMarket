@@ -3,6 +3,7 @@
 	import { cart } from '$lib/cart.svelte';
 	import { bytesLabel, priceLabel } from '$lib/format';
 	import { goto } from '$app/navigation';
+	import { guideAnchor } from '$lib/guide/guide.js';
 
 	let { data } = $props();
 	const p = $derived(data.product);
@@ -99,7 +100,7 @@
 				{#each p.files as f}
 					<li>{FORMAT_INFO[f.format] ?? f.format.toUpperCase()} <span class="text-slate-400">({bytesLabel(f.bytes)})</span></li>
 				{/each}
-				<li>LICENSE.txt + README.txt (import guide for Roblox Studio)</li>
+				<li>LICENSE.txt + README.txt · <a href="/guide{guideAnchor(a.category)}" class="underline">How to use it in Roblox Studio</a></li>
 			</ul>
 		</div>
 

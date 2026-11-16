@@ -1,0 +1,83 @@
+#!/usr/bin/env python3
+"""Crop, highlight and compress the guide screenshots.
+
+Raw window captures live in run/guide-raw/ (gitignored, may show account names or paths).
+docs/guide-shots.json lists every published shot:
+
+  [{"name": "03-import-dialog", "raw": "import.png",
+    "crop": [x, y, w, h],              # in raw pixels; omit for the whole image
+    "highlight": [[x, y, w, h], ...],  # boxes around the clicked control, raw pixels
+    "blur": [[x, y, w, h], ...]}]      # anything private that cannot be cropped away
+
+Output: web/static/guide/<name>.webp (max 1600 px wide, aims for ~200 kB) and the sizes
+in web/src/lib/guide/shots.json, which the page uses for width/height.
+
+  bin/guide-shots            # all shots
+  bin/guide-shots 03-import  # only names starting with this prefix
+"""
+import io
+import json
+import sys
+from pathlib import Path
+
+from PIL import Image, ImageDraw, ImageFilter
+
+ROOT = Path(__file__).resolve().parent.parent
+RAW = ROOT / "run" / "guide-raw"
+SPEC = ROOT / "docs" / "guide-shots.json"
+OUT = ROOT / "web" / "static" / "guide"
+SIZES = ROOT / "web" / "src" / "lib" / "guide" / "shots.json"
+MAX_W = 1600
+TARGET = 200_000
+HIGHLIGHT = (239, 68, 68)  # red-500
+
+
+def box(b):
+    x, y, w, h = b
+    return (x, y, x + w, y + h)
+
+
+def render(shot):
+    img = Image.open(RAW / shot["raw"]).convert("RGB")
+    for b in shot.get("blur", []):
+        region = img.crop(box(b)).filter(ImageFilter.GaussianBlur(12))
+        img.paste(region, box(b)[:2])
+    draw = ImageDraw.Draw(img)
+    stroke = max(3, img.width // 400)
+    for b in shot.get("highlight", []):
+        x0, y0, x1, y1 = box(b)
+        pad = stroke * 2
+        draw.rounded_rectangle((x0 - pad, y0 - pad, x1 + pad, y1 + pad), radius=pad * 2,
+                               outline=HIGHLIGHT, width=stroke)
+    if "crop" in shot:
+        img = img.crop(box(shot["crop"]))
+    if img.width > MAX_W:
+        img = img.resize((MAX_W, round(img.height * MAX_W / img.width)), Image.LANCZOS)
+    for q in (85, 78, 70, 62, 55):
+        buf = io.BytesIO()
+        img.save(buf, "WEBP", quality=q, method=6)
+        if buf.tell() <= TARGET:
+            break
+    (OUT / f"{shot['name']}.webp").write_bytes(buf.getvalue())
+    return img.width, img.height, buf.tell(), q
+
+
+def main():
+    prefix = sys.argv[1] if len(sys.argv) > 1 else ""
+    shots = json.loads(SPEC.read_text())
+    OUT.mkdir(parents=True, exist_ok=True)
+    sizes = json.loads(SIZES.read_text()) if SIZES.exists() else {}
+    names = {s["name"] for s in shots}
+    sizes = {k: v for k, v in sizes.items() if k in names}
+    for shot in shots:
+        if not shot["name"].startswith(prefix):
+            continue
+        w, h, n, q = render(shot)
+        sizes[shot["name"]] = {"w": w, "h": h}
+        flag = "  (over target)" if n > TARGET else ""
+        print(f"{shot['name']}.webp  {w}x{h}  {n // 1000} kB  q{q}{flag}")
+    SIZES.write_text(json.dumps(dict(sorted(sizes.items())), indent=1) + "\n")
+
+
+if __name__ == "__main__":
+    main()

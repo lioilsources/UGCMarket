@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-16 — Plán 02, kostra návodu `/guide` (Studio zatím neprošlo)
+
+- Stránka `/guide` s obsahem v `web/src/lib/guide/guide.js` (jeden zdroj i pro olin.now).
+  Ověřený je jen oddíl o obsahu ZIPu; neověřené oddíly se ukážou jen ve `vite dev`.
+- Odkazy na návod: patička, `/me`, detail produktu (`/guide#cat-<category>`), `README.txt`
+  (Quick start s `{PUBLIC_URL}/guide`, bez neověřené cesty v menu Studia). E2e to kontroluje.
+- `bin/guide-shots`: výřez, rámečky, rozmazání a WebP podle `docs/guide-shots.json`.
+- `docs/STUDIO_RUNBOOK.md`: stav, postup průchodu a kroky pro Olina. `run/` v gitignore.
+- Neprošlo: průchod ve Studiu (Studio neběželo, MCP nepřipojený), stažení testovacích ZIPů
+  (market vracel 530, Docker na JODĚ zastavený).
+
 ## 2026-11-16 — Plány 02 a 03, rešerše Snapchatu
 
 - `Prompts/02-PLAN-runbook-studio.md`: návod pro zákazníky od ZIPu po model na postavě

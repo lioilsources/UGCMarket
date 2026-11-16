@@ -15,6 +15,7 @@ key.properties
 .claude/settings.local.json
 CLAUDE.local.md
 # devconv:end
-bin/
+api/bin/
 *.test
 *.out
+run/

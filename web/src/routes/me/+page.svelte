@@ -46,6 +46,9 @@
 				</li>
 			{/each}
 		</ul>
+		<p class="text-sm text-slate-500">
+			New to Roblox Studio? <a href="/guide" class="underline">Follow the step-by-step guide</a>.
+		</p>
 	{/if}
 	{#if error}
 		<p class="text-sm text-red-600">{error}</p>

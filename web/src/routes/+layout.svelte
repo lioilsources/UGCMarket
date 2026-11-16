@@ -38,6 +38,7 @@
 	<footer class="border-t border-slate-200 bg-white px-4 py-3 text-center text-xs text-slate-500">
 		Ol1n Market sells independent 3D models compatible with Roblox Studio. Not affiliated with, endorsed by, or
 		sponsored by Roblox Corporation. “Roblox” is a trademark of Roblox Corporation.
+		<a href="/guide" class="underline">Studio guide</a> ·
 		<a href="/licenses" class="underline">Licenses &amp; refunds</a>
 	</footer>
 </div>

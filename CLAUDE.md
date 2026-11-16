@@ -21,6 +21,7 @@ make deploy-nas        # celý stack = zveřejnění, jen na Olinovo „nasaď�
 - `web/` SvelteKit PWA, `/api/*` proxy na market-api.
 - `deploy/` compose pro JODU: db, market-api, market-web, Caddy, cloudflared.
 - `docs/` rešerše Fáze 0, screenshoty. `Prompts/` plány.
+- `bin/` nástroje (`guide-shots`), `run/` běhová data (gitignore).
 
 ## Invarianty
 - Platby jen přes `PaymentProvider`/`WebhookProvider` (`api/internal/shop/payments.go`).
@@ -39,6 +40,6 @@ make deploy-nas        # celý stack = zveřejnění, jen na Olinovo „nasaď�
 
 ## Kam dál
 - `Prompts/01-PLAN-dalsi-kroky.md` aktuální plán, `Prompts/00-ROBLOXMARKET_PLAN.md` původní zadání.
-- `Prompts/02-PLAN-runbook-studio.md` návod pro zákazníky (Roblox Studio, olin.now).
+- `Prompts/02-PLAN-runbook-studio.md` návod pro zákazníky, stav v `docs/STUDIO_RUNBOOK.md`.
 - `Prompts/03-PLAN-snapchat.md` pokus se Snapchatem, podklad `docs/SNAPCHAT_RESEARCH.md`.
 - `README.md` architektura a API, `CHANGELOG.md`, `docs/ROBLOX_COMPLIANCE.md`, `docs/UGC_API.md`.

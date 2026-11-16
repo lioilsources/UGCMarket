@@ -312,6 +312,9 @@ func TestEndToEnd(t *testing.T) {
 	if got[slug+"/"+slug+".fbx"] != "FBX-data" || !strings.Contains(got[slug+"/LICENSE.txt"], lics[0]["license_key"].(string)) {
 		t.Fatalf("zip content wrong")
 	}
+	if !strings.Contains(got[slug+"/README.txt"], "http://market.test/guide") {
+		t.Fatalf("README.txt has no guide link:\n%s", got[slug+"/README.txt"])
+	}
 
 	// 6) paid product: checkout is rejected without a provider
 	admin.do("PATCH", fmt.Sprintf("/api/admin/products/%d", id), map[string]any{"tier": "paid", "price_cents": 300}, nil)
