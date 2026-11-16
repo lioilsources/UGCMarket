@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-16 — Plány 02 a 03, rešerše Snapchatu
+
+- `Prompts/02-PLAN-runbook-studio.md`: návod pro zákazníky od ZIPu po model na postavě
+  v Roblox Studiu, nasazený i na olin.now (sekce `ugcmarket`).
+- `docs/SNAPCHAT_RESEARCH.md`: oblečení pro Bitmoji je uzavřený obchod, otevřené jsou jen Lenses
+  a výplaty za ně nejsou pro Česko. `Prompts/03-PLAN-snapchat.md`: časově omezený pokus.
+- Olin rozhodl: pokus ano, osobní účet Snapchat, dotaz na DRESSX a Snap poslat
+  (koncept `docs/SNAPCHAT_INQUIRY.md`). Nic z plánů 02 a 03 zatím není implementované.
+
 ## 2026-11-16 — Etapa C: nasazení na market.ol1n.com
 
 - Stack (`main`) běží na JODĚ, data na datasetu `pool/market` (`market_dev` obnovená z dumpu).

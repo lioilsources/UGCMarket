@@ -35,9 +35,10 @@ make deploy-nas        # celý stack = zveřejnění, jen na Olinovo „nasaď�
 
 ## Odchylky
 - `jodadeploy` zatím neexistuje: deploy přes `make deploy-nas`, který zapisuje do `events.jsonl`.
-- Do přidělení datasetu `pool/market` leží data na JODĚ v deploy adresáři projektu (`data/`).
 - Odchylka od lang.md: komentáře v migraci `0001_init` zůstávají česky (nasazená migrace se needituje).
 
 ## Kam dál
 - `Prompts/01-PLAN-dalsi-kroky.md` aktuální plán, `Prompts/00-ROBLOXMARKET_PLAN.md` původní zadání.
+- `Prompts/02-PLAN-runbook-studio.md` návod pro zákazníky (Roblox Studio, olin.now).
+- `Prompts/03-PLAN-snapchat.md` pokus se Snapchatem, podklad `docs/SNAPCHAT_RESEARCH.md`.
 - `README.md` architektura a API, `CHANGELOG.md`, `docs/ROBLOX_COMPLIANCE.md`, `docs/UGC_API.md`.
