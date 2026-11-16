@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-16 — Etapa C: nasazení na market.ol1n.com
+
+- Stack (`main`) běží na JODĚ, data na datasetu `pool/market` (`market_dev` obnovená z dumpu).
+- Tunel `market-nas` → Caddy → web; cloudflared 2026.11.0. `route dns` musí mít `--config /dev/null`,
+  jinak DNS dostane výchozí tunel hostu a web vrací 404.
+- Vylistováno 5 kusů (4 zdarma, 1 za $3); objednávka zdarma na produkci ověřená
+  (`docs/screenshots/prod-free-order.jpg`). Platby a Resend zatím nejsou zapnuté.
+
 ## 2026-11-12 — Etapy A a B plánu 01: repo a srovnání s infra pravidly
 
 - Git repo (`main`), `CLAUDE.md`, `.claude/settings.json` a gitignore podle DevConventions.
