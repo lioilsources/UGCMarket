@@ -8,6 +8,8 @@
   (Quick start s `{PUBLIC_URL}/guide`, bez neověřené cesty v menu Studia). E2e to kontroluje.
 - `bin/guide-shots`: výřez, rámečky, rozmazání a WebP podle `docs/guide-shots.json`.
 - `docs/STUDIO_RUNBOOK.md`: stav, postup průchodu a kroky pro Olina. `run/` v gitignore.
+- Ikona obchodu `docs/brand/icon-1024.png` (SPARK, Qwen-Image); 512 px verze je ikonou sekce
+  `ugcmarket` na olin.now (větev `feat/ugcmarket` v `ol1n.now`, 45 jazyků).
 - Neprošlo: průchod ve Studiu (Studio neběželo, MCP nepřipojený), stažení testovacích ZIPů
   (market vracel 530, Docker na JODĚ zastavený).
 
