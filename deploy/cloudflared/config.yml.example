@@ -2,7 +2,7 @@
 # with the tunnel UUID and copies credentials.json; both are outside git.
 # The tunnel and DNS record are created manually, once, by Olin:
 #   cloudflared tunnel create market-nas
-#   cloudflared tunnel route dns market-nas market.ol1n.com
+#   cloudflared tunnel --config /dev/null route dns market-nas market.ol1n.com   (without --config the host default tunnel wins)
 # The web is PUBLIC, without Cloudflare Access.
 
 tunnel: <TUNNEL-ID>

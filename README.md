@@ -62,7 +62,7 @@ Jednou ručně (Olin):
 1. ZFS dataset `pool/market` a pod ním `pool/market/postgres` (recordsize 16K), mountpoint
    pod domovským adresářem, aby ho viděl snap docker. Do té doby `DATA_DIR` v `deploy/.env`
    na JODĚ ukazuje do `data/` v deploy adresáři projektu.
-2. `cloudflared tunnel create market-nas` a `cloudflared tunnel route dns market-nas market.ol1n.com`.
+2. `cloudflared tunnel create market-nas` a `cloudflared tunnel --config /dev/null route dns market-nas market.ol1n.com` (bez `--config /dev/null` vyhraje výchozí tunel z `~/.cloudflared/config.yml`).
 3. Resend: ověřená doména a `RESEND_API_KEY` v `deploy/.env` na JODĚ.
 
 Pak:

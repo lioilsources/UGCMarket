@@ -80,7 +80,7 @@ services:
     depends_on: [market-web]
 
   cloudflared:
-    image: cloudflare/cloudflared:2026.7.3
+    image: cloudflare/cloudflared:2026.11.0
     container_name: market-cloudflared
     restart: unless-stopped
     command: tunnel --no-autoupdate --config /etc/cloudflared/config.yml run
