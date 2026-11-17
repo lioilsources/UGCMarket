@@ -26,8 +26,13 @@ stránka, odkazy, README, skript na screenshoty.
   kategorií v oddílu `accessory` musí mít `rowIds: ['cat-hat', …]`.
 - `README.txt` v balíčku má odkaz `{PUBLIC_URL}/guide`; e2e test to kontroluje.
 - Export na olin.now: `bin/export-olinnow ../ol1n.now` zapíše `apps/ugcmarket/pages/guide.html`
-  (stránka `ugcmarket-guide.html`) a snímky do `static/apps/ugcmarket/guide/`. Ručně tam needitovat,
-  po změně `guide.js` export pustit znovu. Styly `.ugc-guide` jsou v `assets/css/store.css` tamního repa.
+  (čeština, výchozí jazyk webu) a `guide.<lang>.html` pro dalších 44 jazyků sekce, snímky do
+  `static/apps/ugcmarket/guide/`. Ručně tam needitovat. Styly `.ugc-guide` jsou v
+  `assets/css/store.css` tamního repa.
+- **Překlady:** `web/src/lib/guide/i18n/<lang>.json`, klíče z `en.json` (`i18n.js`). Po změně
+  `guide.js` export odmítne běžet a vypíše změněné klíče: `bin/export-olinnow --update-en`, pak
+  ty klíče přeložit ve všech jazycích. Tučné názvy z UI Studia, `kód` a URL zůstávají anglicky.
+  Market `/guide` je dál jen anglicky. Překlady dělali agenti 2026-11-17, rodilý mluvčí je nečetl.
 
 ## Průchod ve Studiu (Etapa 1)
 
