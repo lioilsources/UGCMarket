@@ -6,6 +6,15 @@ kupující je stáhne jako ZIP (FBX + textura + GLB + LICENSE + README).
 Veřejně **„Ol1n Market“** — jméno Roblox se v názvu obchodu použít nesmí (viz
 `docs/ROBLOX_COMPLIANCE.md`). Interní/repo jméno RobloxMarket zůstává.
 
+| Katalog | Detail s 3D náhledem |
+|---|---|
+| ![Katalog](docs/screenshots/prod-catalog.jpg) | ![Detail produktu](docs/screenshots/prod-detail.jpg) |
+
+**Návod pro zákazníky** (od ZIPu po accessory na postavě v Roblox Studiu, se snímky):
+stránka `/guide`, zdroj `web/src/lib/guide/guide.js`, náhled
+[`docs/screenshots/guide-page.jpg`](docs/screenshots/guide-page.jpg). Jak vznikl a jak ho
+přefotit: [`docs/STUDIO_RUNBOOK.md`](docs/STUDIO_RUNBOOK.md).
+
 ```
 prohlížeč ──► market-web (SvelteKit, :3000)  ── /api/* proxy ──►  market-api (Go, :8096)
                                                                    ├─ Postgres 17 + pgvector (JSONB/GIN, embeddingy)
