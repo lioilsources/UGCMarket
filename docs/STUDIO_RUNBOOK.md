@@ -25,6 +25,9 @@ stránka, odkazy, README, skript na screenshoty.
 - Kotvy pro produkty: detail produktu odkazuje na `/guide#cat-<category>`. Řádky tabulky
   kategorií v oddílu `accessory` musí mít `rowIds: ['cat-hat', …]`.
 - `README.txt` v balíčku má odkaz `{PUBLIC_URL}/guide`; e2e test to kontroluje.
+- Export na olin.now: `bin/export-olinnow ../ol1n.now` zapíše `apps/ugcmarket/pages/guide.html`
+  (stránka `ugcmarket-guide.html`) a snímky do `static/apps/ugcmarket/guide/`. Ručně tam needitovat,
+  po změně `guide.js` export pustit znovu. Styly `.ugc-guide` jsou v `assets/css/store.css` tamního repa.
 
 ## Průchod ve Studiu (Etapa 1)
 
