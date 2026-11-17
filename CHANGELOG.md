@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-11-17 — Návod `/guide` prošel Roblox Studiem 0.747
+
+- Průchod na MacBooku přes Studio MCP a klikání agenta: helma (trellis) a box batoh (sf3d)
+  od ZIPu po accessory na figuríně, skript `Humanoid:AddAccessory` v playtestu.
+- `guide.js`: oddíly Before you start, Import, Apply the texture (v importu i po importu přes
+  Asset Manager), Turn it into an accessory (tabulka hat/helmet/back), Try it on a character,
+  Use it in your experience, Troubleshooting a Publishing (jen odkaz na dokumentaci Robloxu).
+  Verze Studia a datum ověření vyplněné. Renderer umí odkazy `[text](https://…|#kotva)`.
+- 12 snímků ve `web/static/guide/` (výřezy, rámečky a rozmazání v `docs/guide-shots.json`).
+- Vady assetů v `docs/STUDIO_RUNBOOK.md`: sf3d je ~4× větší a bez odkazu na texturu, trellis
+  odkazuje na cestu build stroje, `bbox_studs` helmy nesedí. Opravy patří do UGC Factory.
+
 ## 2026-11-16 — Plán 02, kostra návodu `/guide` (Studio zatím neprošlo)
 
 - Stránka `/guide` s obsahem v `web/src/lib/guide/guide.js` (jeden zdroj i pro olin.now).

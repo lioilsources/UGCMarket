@@ -1,1 +1,14 @@
-[]
+[
+ {"name": "01-import-button", "raw": "02-home-import.png", "crop": [0, 66, 2200, 195], "highlight": [[1445, 150, 95, 98]]},
+ {"name": "02-import-preview", "raw": "03-import-preview-helmet.png", "blur": [[190, 55, 1000, 100]], "highlight": [[1305, 1400, 255, 90]]},
+ {"name": "03-texture-error", "raw": "04-texture-error-helmet.png", "crop": [0, 0, 1600, 1524], "blur": [[180, 55, 1000, 100]], "highlight": [[1465, 305, 70, 70]]},
+ {"name": "04-texture-picked", "raw": "05-texture-picked-helmet.png", "blur": [[190, 55, 1000, 100], [1150, 300, 300, 70]]},
+ {"name": "05-avatar-accessory", "raw": "07-avatar-tab.png", "crop": [0, 66, 2200, 195], "highlight": [[1255, 150, 115, 98]]},
+ {"name": "06-aft-select", "raw": "18-aft-select-backpack.png", "crop": [0, 256, 2149, 1111], "highlight": [[165, 535, 152, 47], [212, 602, 129, 47]]},
+ {"name": "07-aft-type", "raw": "19-aft-back.png", "crop": [0, 256, 2149, 1111], "highlight": [[37, 512, 339, 47], [194, 722, 129, 47]]},
+ {"name": "08-aft-generate", "raw": "20-aft-edit-backpack.png", "crop": [0, 256, 2149, 1111], "highlight": [[41, 1279, 322, 70]]},
+ {"name": "09-rig-builder", "raw": "12-rig-builder.png", "crop": [0, 66, 2924, 1560], "blur": [[2840, 66, 84, 75]], "highlight": [[1060, 158, 96, 89], [1275, 1292, 370, 62]]},
+ {"name": "10-helmet-on-rig", "raw": "13-helmet-on-rig.jpg"},
+ {"name": "11-asset-manager-id", "raw": "16-image-uploaded.png", "crop": [0, 1380, 2924, 380], "blur": [[1500, 1655, 170, 40], [1570, 1440, 400, 45], [2070, 1435, 180, 60]], "highlight": [[2270, 1555, 220, 55]]},
+ {"name": "12-backpack-on-rig", "raw": "22-backpack-on-rig.png", "crop": [390, 314, 1754, 1045]}
+]

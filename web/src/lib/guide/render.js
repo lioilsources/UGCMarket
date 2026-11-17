@@ -4,11 +4,12 @@ import shots from './shots.json' with { type: 'json' };
 /** @param {string} s */
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-/** Escape, then apply **bold** and `code`. @param {string} s */
+/** Escape, then apply **bold**, `code` and [links](https://… or #anchor). @param {string} s */
 export function inline(s) {
 	return esc(s)
 		.replace(/`([^`]+)`/g, '<code>$1</code>')
-		.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+		.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+		.replace(/\[([^\]]+)\]\(((?:https:\/\/|#)[^)\s]+)\)/g, '<a href="$2">$1</a>');
 }
 
 /**

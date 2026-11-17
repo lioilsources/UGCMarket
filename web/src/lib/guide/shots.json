@@ -1,1 +1,50 @@
-{}
+{
+ "01-import-button": {
+  "w": 1600,
+  "h": 142
+ },
+ "02-import-preview": {
+  "w": 1600,
+  "h": 1524
+ },
+ "03-texture-error": {
+  "w": 1600,
+  "h": 1524
+ },
+ "04-texture-picked": {
+  "w": 1600,
+  "h": 1524
+ },
+ "05-avatar-accessory": {
+  "w": 1600,
+  "h": 142
+ },
+ "06-aft-select": {
+  "w": 1600,
+  "h": 827
+ },
+ "07-aft-type": {
+  "w": 1600,
+  "h": 827
+ },
+ "08-aft-generate": {
+  "w": 1600,
+  "h": 827
+ },
+ "09-rig-builder": {
+  "w": 1600,
+  "h": 854
+ },
+ "10-helmet-on-rig": {
+  "w": 1496,
+  "h": 1080
+ },
+ "11-asset-manager-id": {
+  "w": 1600,
+  "h": 208
+ },
+ "12-backpack-on-rig": {
+  "w": 1600,
+  "h": 953
+ }
+}
